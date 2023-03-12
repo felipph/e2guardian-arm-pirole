@@ -1,0 +1,11 @@
+version: '3'
+services:
+  e2guardian:
+    container_name: e2guardian
+    image: teste
+    restart: on-failure
+    volumes:
+        - ./e2g-config:/etc/e2guardian
+    ports:
+      - "8080:8080"
+      

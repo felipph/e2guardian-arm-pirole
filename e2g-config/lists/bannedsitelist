@@ -1,0 +1,92 @@
+#domains in banned list
+#Don't bother with the www. or the http://
+
+#The bannedurllist is for blocking PART of a site
+#The bannedsitelist is for blocking ALL of a site
+
+#NOTE: Sites using just IP should be put into bannedsiteiplist
+
+#You can include]
+#.tld so for example you can match .gov for example
+
+#The 'grey' lists override the 'banned' lists.
+#The 'exception' lists override the 'banned' lists also.
+#The difference is that the 'exception' lists completely switch
+#off *all* other filtering for the match.  'grey' lists only
+#stop the URL filtering and allow the normal filtering to work.
+
+#An example of grey list use is when in Blanket Block (whitelist)
+#mode and you want to allow some sites but still filter as normal
+#on their content
+
+#Another example of grey list use is when you ban a site but want
+#to allow part of it.
+
+#To include additional files in this list use this example:
+#.Include</etc/e2guardian/anotherbannedurllist>
+
+#You can have multiple .Includes.
+
+# Time limiting syntax:
+# #time: <start hour> <start minute> <end hour> <end minute> <days>
+# Example:
+##time: 9 0 17 0 01234
+# Remove the first # from the line above to enable this list only from
+# 9am to 5pm, Monday to Friday.
+
+# List categorisation
+listcategory: "Banned Sites"
+pornhub.com
+#List other sites to block:
+
+# badboys.com
+
+# NOTE: From v5 Blanket blocks are now implemented using Storyboarding 
+# WARNING: Old style Blanket blocks in this file will be silently ignored
+
+
+# The squidGuard advert domain/URL lists are now included by default.
+# To work with advanced ad blocking & the logadblocks option, advert
+# phrase/site/URL lists should have the string "ADs" in their listcategory.
+# .Include</etc/e2guardian/lists/blacklists/ads/domains>
+
+#Remove the # from the following and edit as needed to use a stock
+#squidGuard/urlblacklists collection.
+
+.Include</etc/e2guardian/lists/blacklists/adult/domains>
+.Include</etc/e2guardian/lists/blacklists/agressif/domains>
+.Include</etc/e2guardian/lists/blacklists/arjel/domains>
+.Include</etc/e2guardian/lists/blacklists/associations_religieuses/domains>
+.Include</etc/e2guardian/lists/blacklists/astrology/domains>
+
+.Include</etc/e2guardian/lists/blacklists/bitcoin/domains>
+.Include</etc/e2guardian/lists/blacklists/blog/domains>
+.Include</etc/e2guardian/lists/blacklists/celebrity/domains>
+.Include</etc/e2guardian/lists/blacklists/chat/domains>
+
+.Include</etc/e2guardian/lists/blacklists/cryptojacking/domains>
+.Include</etc/e2guardian/lists/blacklists/dangerous_material/domains>
+.Include</etc/e2guardian/lists/blacklists/dating/domains>
+.Include</etc/e2guardian/lists/blacklists/ddos/domains>
+.Include</etc/e2guardian/lists/blacklists/dialer/domains>
+.Include</etc/e2guardian/lists/blacklists/doh/domains>
+.Include</etc/e2guardian/lists/blacklists/download/domains>
+.Include</etc/e2guardian/lists/blacklists/drogue/domains>
+.Include</etc/e2guardian/lists/blacklists/filehosting/domains>
+.Include</etc/e2guardian/lists/blacklists/gambling/domains>
+.Include</etc/e2guardian/lists/blacklists/hacking/domains>
+.Include</etc/e2guardian/lists/blacklists/lingerie/domains>
+.Include</etc/e2guardian/lists/blacklists/malware/domains>
+.Include</etc/e2guardian/lists/blacklists/marketingware/domains>
+.Include</etc/e2guardian/lists/blacklists/mixed_adult/domains>
+.Include</etc/e2guardian/lists/blacklists/phishing/domains>
+.Include</etc/e2guardian/lists/blacklists/publicite/domains>
+.Include</etc/e2guardian/lists/blacklists/reaffected/domains>
+.Include</etc/e2guardian/lists/blacklists/redirector/domains>
+.Include</etc/e2guardian/lists/blacklists/remote-control/domains>
+.Include</etc/e2guardian/lists/blacklists/sect/domains>
+.Include</etc/e2guardian/lists/blacklists/sexual_education/domains>
+.Include</etc/e2guardian/lists/blacklists/stalkerware/domains>
+.Include</etc/e2guardian/lists/blacklists/tricheur/domains>
+.Include</etc/e2guardian/lists/blacklists/vpn/domains>
+.Include</etc/e2guardian/lists/blacklists/warez/domains>
