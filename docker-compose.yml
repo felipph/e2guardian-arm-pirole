@@ -3,33 +3,34 @@ services:
   e2guardian:
     container_name: e2guardian
     image: felipph/e2guardian
-    restart: on-failure
+    restart: unless-stopped
     volumes:
         - ./e2g-config:/etc/e2guardian
     ports:
       - "8080:8080"
-  hostapd2.4g:
-    container_name: hostapd_container2.4g
-    image: simonchuang12/rpi-hostapd
     network_mode: "host"
-    privileged: true 
-    restart: on-failure
-    volumes:
-      - ./hostapd/hostapd.conf:/etc/hostapd/hostapd.conf
-  pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
-      - "80:80/tcp"
-    environment:
-      TZ: 'America/Sao_Paulo'
-      WEBPASSWORD: 'password'
-    volumes:
-      - './etc-pihole:/etc/pihole'
-      - './etc-dnsmasq.d:/etc/dnsmasq.d'
-    cap_add:
-      - NET_ADMIN
-    restart: unless-stopped    
+  # hostapd2.4g:
+  #   container_name: hostapd_container2.4g
+  #   image: simonchuang12/rpi-hostapd
+  #   network_mode: "host"
+  #   privileged: true 
+  #   restart: on-failure
+  #   volumes:
+  #     - ./hostapd/hostapd.conf:/etc/hostapd/hostapd.conf
+  # pihole:
+  #   container_name: pihole
+  #   image: pihole/pihole:latest
+  #   ports:
+  #     - "53:53/tcp"
+  #     - "53:53/udp"
+  #     - "67:67/udp"
+  #     - "80:80/tcp"
+  #   environment:
+  #     TZ: 'America/Sao_Paulo'
+  #     WEBPASSWORD: 'password'
+  #   volumes:
+  #     - './etc-pihole:/etc/pihole'
+  #     - './etc-dnsmasq.d:/etc/dnsmasq.d'
+  #   cap_add:
+  #     - NET_ADMIN
+  #   restart: unless-stopped    
